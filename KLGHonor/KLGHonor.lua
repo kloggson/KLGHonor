@@ -19,9 +19,7 @@ end
 
 local function KLGHonor(self, event, arg1, ...)
   if event == "ADDON_LOADED" and arg1 == "KLGHonor" then
-    -- denna event körs när ditt addon laddat alla filer
     if KLGHonorDB == nil then
-      -- skapa ditt table (databasen här om den inte redan är skapad) sparas i din SavedVariables
       KLGHonorDB = {
         honor = 0,
         reset_time = 0,
@@ -34,7 +32,7 @@ local function KLGHonor(self, event, arg1, ...)
       }
     end
   elseif event == "CHAT_MSG_COMBAT_HONOR_GAIN" then
-    -- gör honor stuff här
+
     local victim, _, awarded_honor = parseHonorMessage(arg1)
     if victim then
       KLGHonorDB.killed_players[victim] = (KLGHonorDB.killed_players[victim] or 0) + 1
@@ -53,7 +51,7 @@ SLASH_KLG1 = "/klg"
 SlashCmdList["KLG"] = function(functionName)
   local command, arg1, arg2 = strsplit(" ", functionName, 3);
   if command == "test" then
-    -- triggas ingame av /klg test
+
     print(KLGHonorDB.honor)
   elseif command == "report" then
     if (arg1) then
@@ -64,7 +62,6 @@ SlashCmdList["KLG"] = function(functionName)
   elseif command == "reset" then
     print("All data has been reset")
     KLGHonorDB = {
-      -- lägg till kill count
       total_kills = 0,
       honor = 0,
       reset_time = 0,
