@@ -55,7 +55,16 @@ SlashCmdList["KLG"] = function(functionName)
     print(KLGHonorDB.honor)
   elseif command == "report" then
     if (arg1) then
-      SendChatMessage("Honor gained since last reset: " .. KLGHonorDB.honor .. " from " .. KLGHonorDB.total_kills .. " kills.", arg1, nil, nil)
+      if arg1 == "whisper" then
+        if arg2 == nil then
+          print("please enter a player to whisper /klg report whisper <player>")
+          return
+        else
+          SendChatMessage("Honor gained since last reset: " .. KLGHonorDB.honor .. " from " .. KLGHonorDB.total_kills .. " kills.", arg1, nil, arg2)
+        end
+      else
+        SendChatMessage("Honor gained since last reset: " .. KLGHonorDB.honor .. " from " .. KLGHonorDB.total_kills .. " kills.", arg1, nil, nil)
+      end
     else
       print("Honor gained since last reset: " .. KLGHonorDB.honor .. " from " .. KLGHonorDB.total_kills .. " kills.")
     end
