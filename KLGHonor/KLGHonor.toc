@@ -4,8 +4,8 @@
 ## Notes: count honor from kills
 
 ## Author: Klg @ Zandalar Tribe
-## Version: 0.0.1
+## Version: 0.0.2
 
 ## SavedVariables: KLGHonorDB
 
-main.lua
+KLGHonor.lua
