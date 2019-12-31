@@ -8,4 +8,4 @@
 
 ## SavedVariables: KLGHonorDB
 
-KLGHonor.lua
+main.lua
