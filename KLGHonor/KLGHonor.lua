@@ -65,6 +65,8 @@ SlashCmdList["KLG"] = function(functionName)
       total_kills = 0,
       honor = 0,
       reset_time = 0,
+      lifetime_kills = KLGHonorDB.lifetime_kills,
+      lifetime_honor = KLGHonorDB.lifetime_honor,
       killed_players = {}
     }
   end
